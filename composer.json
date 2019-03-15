@@ -1,0 +1,21 @@
+{
+    "name": "repat/weimark-php",
+    "description": "API Client for weimark.com webservice",
+    "keywords": ["weimark", "weimark.com", "api", "client", "sdk", "webservice", "xml"],
+    "homepage": "http://repat.de",
+    "license": "MIT",
+        "version" : "0.1",
+    "authors": [
+        {"name": "repat", "email": "repat@repat.de"}
+    ],
+    "require": {
+        "php": ">=5.6",
+        "guzzlehttp/guzzle": "^6.3"
+    },
+    "autoload": {
+        "psr-0": {
+          "Repat\\Weimark\\": "src/"
+        }
+    },
+    "minimum-stability" : "dev"
+}

@@ -77,6 +77,7 @@ class Client
                 'body' => $this->xmlRequest('GetApplication', ['applicationid' => $applicationId])
             ]
         );
+        return []; // TODO
     }
 
     /**
@@ -93,6 +94,7 @@ class Client
                 'body' => $this->xmlRequest('NewApplication', ['applicant' => $attributes])
             ]
         );
+        return []; // TODO
     }
 
     /*
@@ -151,17 +153,29 @@ class Client
         $writer = new \XMLWriter();
         $writer->openMemory();
 
-        // $writer->startElement('element');
+        $writer->startElement('xml');
 
         $writer->writeAttribute('action', $action);
         $writer->writeAttribute('email', $this->email);
         $writer->writeAttribute('password', $this->password);
         $writer->writeAttribute('agents_email', $this->agentsEmail);
+
+        $writer->startElement('request');
+        $writer->startElement('services');
+
+        $writer->writeAttribute('service', 79); // TODO Magic
+        $writer->writeAttribute('service', 82); // TODO Magic
+        
+        $writer->endElement(); // services
+        $writer->startElement('applicant');
+
         foreach ($body as $key => $value) {
             $writer->writeAttribute($key, $value);
         }
 
-        // $writer->endElement();
+        $writer->endElement(); // applicant
+        $writer->endElement(); // request
+        $writer->endElement(); // xml
 
         return $writer->flush();
     }

@@ -2,7 +2,7 @@
     "name": "repat/weimark-php",
     "description": "API Client for weimark.com webservice",
     "keywords": ["weimark", "weimark.com", "api", "client", "sdk", "webservice", "xml"],
-    "homepage": "http://repat.de",
+    "homepage": "https://repat.de",
     "license": "MIT",
         "version" : "0.1",
     "authors": [
